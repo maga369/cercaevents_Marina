@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="500.0" prefWidth="700.0" spacing="12.0" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.MainController">
+   <children>
+      <Label text="Cerca Event">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+
+      <Label text="Filtres" />
+
+      <GridPane hgap="10.0" vgap="8.0">
+         <columnConstraints>
+            <ColumnConstraints minWidth="65.0" prefWidth="65.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="220.0" prefWidth="260.0" />
+            <ColumnConstraints minWidth="45.0" prefWidth="45.0" />
+            <ColumnConstraints minWidth="140.0" prefWidth="140.0" />
+            <ColumnConstraints minWidth="150.0" prefWidth="150.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+         <children>
+            <Label text="Ubicacio" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="txtUbicacio" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <Label text="Data" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <DatePicker fx:id="dpData" maxWidth="1.7976931348623157E308" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+            <CheckBox fx:id="chkPlaces" text="Amb places disponibles" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+
+            <HBox alignment="CENTER_RIGHT" spacing="8.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="1">
+               <children>
+                  <Button onAction="#aplicarFiltres" text="Aplicar filtres" />
+                  <Button onAction="#netejarFiltres" text="Netejar" />
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+
+      <HBox alignment="CENTER_LEFT" spacing="8.0">
+         <children>
+            <Button fx:id="btnTots" onAction="#mostrarTots" text="Tots els Events" />
+            <Button fx:id="btnMeus" onAction="#mostrarMeus" text="Els meus Events" />
+            <Button fx:id="btnInscrits" onAction="#mostrarInscrits" text="Events Inscrit" />
+            <Button fx:id="btnCrearEvent" onAction="#crearEvent" text="Crear event">
+               <HBox.margin>
+                  <Insets left="250.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+
+      <TableView fx:id="taulaEvents" prefHeight="300.0">
+         <columns>
+            <TableColumn fx:id="colTitol" prefWidth="175.0" text="Titol" />
+            <TableColumn fx:id="colCategoria" prefWidth="90.0" text="Categoria" />
+            <TableColumn fx:id="colUbicacio" prefWidth="120.0" text="Ubicacio" />
+            <TableColumn fx:id="colData" prefWidth="90.0" text="Data" />
+            <TableColumn fx:id="colHora" prefWidth="80.0" text="Hora" />
+            <TableColumn fx:id="colPlaces" prefWidth="100.0" text="Places" />
+         </columns>
+      </TableView>
+   </children>
+   <padding>
+      <Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+   </padding>
+</VBox>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefWidth="520.0" spacing="24.0" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.EventController">
+   <children>
+      <Label fx:id="lblTitolPantalla" text="Gestio d'esdeveniment">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+
+      <GridPane hgap="16.0" vgap="10.0">
+         <columnConstraints>
+            <ColumnConstraints minWidth="135.0" prefWidth="135.0" />
+            <ColumnConstraints minWidth="285.0" prefWidth="285.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+         <children>
+            <Label text="Titol (*):" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="txtTitol" prefWidth="285.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <Label text="Descripcio:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextArea fx:id="txtDescripcio" prefHeight="66.0" prefRowCount="3" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="Ubicacio (*):" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="txtUbicacio" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Label text="Data (*):" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <DatePicker fx:id="dpData" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <Label text="Hora (*):" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <TextField fx:id="txtHora" promptText="HH:MM" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+            <Label text="Aforament (*):" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <Spinner fx:id="spAforament" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+            <Label text="Places disponibles:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+            <Spinner fx:id="spPlaces" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+         </children>
+      </GridPane>
+
+      <GridPane hgap="16.0" vgap="10.0">
+         <columnConstraints>
+            <ColumnConstraints minWidth="135.0" prefWidth="135.0" />
+            <ColumnConstraints minWidth="285.0" prefWidth="285.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+         <children>
+            <Label text="Categoria (*):" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <ComboBox fx:id="cbCategoria" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <Label text="Camps segons la categoria seleccionada" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets top="26.0" />
+               </GridPane.margin>
+            </Label>
+
+            <Label fx:id="lblCamp1" text="Tema (*):" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextField fx:id="txtCamp1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <Label fx:id="lblCamp2" text="Tipus trobada (*):" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <TextField fx:id="txtCamp2" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+            <Label fx:id="lblCamp3" text="Edat minima:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <TextField fx:id="txtCamp3" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+
+      <HBox alignment="CENTER" spacing="18.0">
+         <children>
+            <Button fx:id="btnGuardar" minWidth="96.0" onAction="#guardarEvent" text="Guardar" />
+            <Button fx:id="btnEliminar" minWidth="96.0" onAction="#eliminarEvent" text="Eliminar" />
+            <Button fx:id="btnInscriure" minWidth="96.0" onAction="#inscriureEvent" text="Inscriure" />
+            <Button minWidth="96.0" onAction="#sortir" text="Sortir" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="30.0" right="30.0" top="22.0" />
+   </padding>
+</VBox>

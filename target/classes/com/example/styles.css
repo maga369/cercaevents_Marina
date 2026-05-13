@@ -1,0 +1,17 @@
+.root {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.button:focused,
+.text-input:focused,
+.combo-box-base:focused,
+.date-picker:focused,
+.spinner:focused,
+.check-box:focused,
+.table-view:focused,
+.table-row-cell:focused,
+.table-cell:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
